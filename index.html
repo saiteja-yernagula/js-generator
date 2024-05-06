@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width>, initial-scale=1.0" />
+  <title>js definition generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-size: cover;
+      background: url("https://wallpapercave.com/wp/wp8448704.png");
+
+    }
+
+    body>div {
+      font-size: 1.4rem;
+    }
+
+    body {
+      font-size: 40px;
+      font-family: Comic Sans MS;
+    }
+
+    /* Responsive font size for different screen sizes */
+    @media (min-width: 700) {
+      html {
+        font-size: 32px;
+      }
+    }
+
+    @media (min-width:766px) {
+      html {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body class="container p-5 mx-auto" style="text-align: center;">
+  <div style="
+        border: 2px solid black;
+        height: 60vh;
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+      ">
+    <div class="container border-2 border-danger py-2" style="height: 100%;overflow: scroll;" id="box">
+      <div id="keyid" style="font-weight: 1000; text-shadow: 1px 2px 5px rgba(2, 2, 41, 0.976);color:white;">Javascript
+      </div>
+      <div id="valid" class="text-light text-bold ">
+        Js is a single threaded synchronous and asynchroonous language which
+        is used to add the functionality and dynamic nature to the website
+      </div>
+    </div>
+  </div>
+
+  <button type="btn" id="bt" class="btn btn-primary p-2 w-50">
+    Click to generate a definition
+  </button>
+
+
+
+  </button>
+  <script>
+    //css
+    var box = document.getElementById("box");
+    box.style.background = "#0066cc";
+
+    //js
+    var obj = {
+      Hoisting: "Hoisting is the default behavior in JavaScript where declarations of variables and functions are moved to the top of their respective scopes even before the execution. This ensures that regardless of where variables and functions are declared within a scope, they are accessible throughout that scope.",
+      Closures: "Closures are a powerful and fundamental concept in JavaScript. They allow inner functions to access variables from their outer scope, even after the outer function has completed execution.",
+      Currying: "Currying is defined as changing a function having multiple arguments into a sequence of functions with a single argument. ",
+      Functions: "A JavaScript function is defined with the function keyword followed by a name followed by parentheses The code to be executed, by the function is placed inside curly brackets",
+      Firstclassfunction: "A function is called a first class function when it is treated like any other variable",
+      Anonymousfunction: "An anonymous function is a function that does not have any name associated with it.",
+      Arrowfunction: "Arrow function is a concise way of writing function in shorter way",
+      ImediatelyInvokedfunction: "An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.",
+      callbackfunciton: "Callback function is a function passed into a another function as an argument which is then invoked inside the outer function to complete some kind of task.",
+      variabless: "variables are containers used to store the data, we can declare variables with var, let and const",
+      GlobalScope: "Variables declared Globally (outside any function) have Global Scope. Global variables can be accessed from anywhere in a JavaScript program",
+      BlockScope: "Variables declared within a block cannot be accessed from outside of the block",
+      LocalScope: "Variables declared inside a function have local scope. They can only be accessed within that function. They cannot be accessed from the outside.",
+      Strings: "Strings is a collection of words enclosed in a quotations Strings are immutable we can’t change the original value. ",
+      Templateliterals: "Template literals allow you to embed expressions and variables directly within the string using ${}. This makes string interpolation more intuitive and readable.",
+      Arrays: "Array is a data structure used to store multiple values of any data type sequentially.",
+      Objects: "An object in JavaScript is a collection of key-value pairs where each key is a string (or a Symbol) and each value can be of any data type, including other objects, functions, arrays, and primitive data types like strings, numbers, and booleans. Objects are created using curly braces {}.",
+      falseValues: 'false, 0 "", null, undefined, Nan',
+      trueValues: 'true, 1 ,non zero numbers, " ", {}, [n],functions',
+      Destructuring: "Destructuring in JavaScript is a powerful feature that allows you to extract values from arrays or properties from objects and bind them to variables in a concise and expressive way. It provides a convenient syntax for extracting data from arrays and objects.",
+      Mapmethod: "The map() method in JavaScript is used to create a new array by calling a provided function on every element in the calling array. It doesn't change the original array; instead, it returns a new array with the results of applying the provided function to each element. ",
+      Filterdmethod: "The filter() method in JavaScript is used to create a new array with all elements that pass a certain condition. It doesn't change the original array; instead, it returns a new array containing only the elements for which the provided filtering function returns true. const numbers",
+      DocumentObjectModel: " connects web pages to scripts languages by representing the structure of a document The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.",
+      Eventhandlers: "Event handlers are functions in JavaScript that are responsible for handling specific types of events. They define what should happen when a particular event occurs. Event handlers are associated with HTML elements and are triggered when the corresponding event takes place. ",
+      EventBubbling: "Event bubbling is a concept in JavaScript (and many other programming languages) where an event triggered on a nested element will bubble up through its ancestors in the DOM hierarchy until it reaches the root of the document",
+      Eventcapturing: "Event capturing is another phase of event propagation in the DOM (Document Object Model) in addition to event bubbling. event capturing starts from the root element and moves down to the target element.",
+      Sychronouus: "Synchronous: In synchronous operations, code is executed sequentially, one line at a time. Each line must wait for the previous one to finish executing before it can start. This can sometimes lead to blocking behavior, where one task prevents another from executing until it's complete",
+      Asynchronous: "Asynchronous operations allow code to execute independently from the main program flow. This means that while one operation is being processed, the program can continue to execute other tasks. Asynchronous operations are typically used for tasks that may take some time to complete, such as fetching data from a server or reading a file. In JavaScript, common asynchronous operations are handled using callbacks, promises, or async/await syntax.",
+      Promises: "A Promise is an object in JavaScript used for deferred and asynchronous computations. It represents a value that may not be available yet, but will be resolved at some point in the future. Promises provide a cleaner way to handle callbacks and avoid callback hell.",
+      PyramidofDoom: "The Pyramid of Doom is a term used to describe a pattern of nested callbacks in JavaScript that can make code difficult to read and maintain. It is often caused by the use of asynchronous functions and can be avoided by using promises or async/await.",
+      AsyncAwait: "Async/await is a syntactic sugar built on top of promises that makes asynchronous code look and behave more like synchronous code. It allows you to write asynchronous code in a more readable and maintainable way. Async/await is used with the `async` keyword, which is placed before a function, and the `await` keyword, which is placed before a promise. The `await` keyword causes the function to pause and wait for the promise to resolve or reject before continuing. This allows you to write asynchronous code in a more sequential and synchronous way.",
+      ThisKeyword: "The `this` keyword in JavaScript refers to the object that the function is a property of. The value of `this` is determined by how the function is called. It can be the global object, an object created with the `new` keyword, an object passed as an argument to a function, or the object that the function is bound to. The value of `this` can be changed using the `call()`, `apply()`, and `bind()` methods.",
+      LocalStorage: "localStorage object stores data with no expiration date. The data will not be deleted when the browser is closed, and it will be available the next day, week, or year unless it’s manually cleared. localStorage is similar to sessionStorage, except that the data stored in localStorage has no expiration time. So, it will not be deleted when the browser is closed, and the data will be available the next day, week, or year unless it’s manually cleared.",
+      SessionStorage: "sessionStorage object stores data for only one session. The data is deleted when the browser is closed. sessionStorage is similar to localStorage, except that the data stored in sessionStorage is deleted when the browser is closed.",
+      Modules: "modules are reusable pieces of code that encapsulate related functionality and can be exported from one file and imported into another. This allows for better organization, maintainability, and reusability of code in large applications. ES6 (ECMAScript 2015) introduced native support for modules.",
+      HttpMethods: "HTTP methods, also known as HTTP request methods, are actions that indicate the desired operation to be performed on a resource identified by a URI (Uniform Resource Identifier).",
+      Httpstatuscodes: "HTTP status codes are standard response codes returned by web servers to indicate the outcome of a client's request.",
+
+    }
+
+    var arrkeys = Object.keys(obj);
+    var arrvals = Object.values(obj);
+
+    var c = 0;
+    var butt = document.getElementById("bt");
+    butt.addEventListener("click", function () {
+      var name = document.getElementById("keyid");
+      name.innerHTML = arrkeys[c];
+
+      var def = document.getElementById("valid");
+      def.innerHTML = arrvals[c];
+      //css
+
+      var bg = ["#330033", "#e68a00 ", "#e60000", "#0066cc", "#004d00", "#004d4d", "663300", " #330033", "#e68a00 ", "#e60000", "#0066cc", "#004d00", "#004d4d", "663300", "#330033", "#e68a00 ", "#e60000", "#0066cc", "#004d00", "#004d4d", "663300", " #330033", "#e68a00 ", "#e60000", "#0066cc", "#004d00", "#004d4d", "663300"]
+      box.style.background = bg[c]
+
+      c++;
+      if (c > arrkeys.length - 1) {
+        c = 0;
+      }
+    });
+
+
+    //concepts covered
+    //bootstrap
+    //variables
+    //arrays
+    //arraymethods
+    //objects
+    //objects-methods
+    //increment
+    //dom
+    //conditional statement
+    //html and css and css media queries
+
+
+
+
+  </script>
+</body>
+
+</html>
